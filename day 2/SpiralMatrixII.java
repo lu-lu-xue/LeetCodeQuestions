@@ -43,6 +43,7 @@ public class SpiralMatrixII{
         return matrix;
     }
 
+    // add an example
     public static void main(String[] args){
         System.out.println(generateMatrix(5));
     }
