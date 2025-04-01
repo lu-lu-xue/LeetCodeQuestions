@@ -1,0 +1,30 @@
+class FourSumCount {
+    public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
+        if (nums1 == null || nums2 == null || nums3 == null || nums4 == null){
+            return 0;
+        }
+
+        int n = nums1.length;
+        // record the sum of two arrays
+        Map<Integer, Integer> sumAB = new HashMap<>();
+        for (int i: nums1){
+            for (int j: nums2){
+                int sum = i + j;
+                sumAB.put(sum, sumAB.getOrDefault(sum, 0) + 1);
+            }
+        }
+
+        int count = 0;
+        // check the validation
+        for (int i: nums3){
+            for (int j: nums4){
+                int s = i + j;
+                if (sumAB.containsKey(-s)){
+                    count += sumAB.get(-s);
+                }
+            }
+        }
+
+        return count;
+    }
+}
