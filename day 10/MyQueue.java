@@ -3,8 +3,8 @@ import java.util.Stack;
 
 public class MyQueue {
 
-    private Stack<Integer> stackIn;
-    private Stack<Integer> stackOut;
+    private final Stack<Integer> stackIn;
+    private final Stack<Integer> stackOut;
 
     public MyQueue() {
         stackIn = new Stack<>();
