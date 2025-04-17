@@ -1,24 +1,26 @@
+
 import java.util.Map;
 import java.util.HashMap;
 
 class BuildTree2 {
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        if (preorder == null || inorder == null){
+        if (preorder == null || inorder == null) {
             return null;
         }
 
         int n = preorder.length;
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i< n; i++){
+        for (int i = 0; i < n; i++) {
             map.put(inorder[i], i);
         }
 
         return helper(preorder, 0, n - 1, inorder, 0, n - 1, map);
     }
 
-    private TreeNode helper(int[] preorder, int preLeft, int preRight, int[] inorder, int inLeft, int inRight, Map<Integer, Integer> map){
+    private TreeNode helper(int[] preorder, int preLeft, int preRight, int[] inorder, int inLeft, int inRight, Map<Integer, Integer> map) {
         // base case
-        if (preLeft > preRight){
+        if (preLeft > preRight) {
             return null;
         }
 
